@@ -159,6 +159,10 @@ for i in name2:
         for e in i:
             if e.upper() in keys:
                 name3.append(e.upper())
+            else:
+                name3.append(e.lower())
+                if e.upper() =='.':
+                    name3.remove(e.upper())
 
         
 
