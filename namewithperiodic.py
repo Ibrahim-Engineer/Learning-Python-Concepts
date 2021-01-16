@@ -142,14 +142,14 @@ for i,e in enumerate(name1):
         newlst2.append(e.upper())
 #combined index valued name that are paired
 newlst3 = list(zip(newlst2,newlst1))
-print(newlst3)   
+#print(newlst3)   
 
 
 name2 = []
 for i in newlst3:
     name2.append(''.join(i))
 
-print(name2)
+#print(name2)
     
 name3 = []
 for i in name2:
