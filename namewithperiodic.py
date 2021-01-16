@@ -120,28 +120,47 @@ periodic_table = {
     }
 keys = list(periodic_table.keys())
 
-newlist = []
+print(keys)
+print('')
 
 x = str(input("name please: "))
+#complete name
+name1 = []
+for i in x:
+    name1.append(i)
+#odd index value name
+newlst1 = []
+for i,e in enumerate(x):
+    if i%2 !=0:
+        newlst1.append(e)
+#even index value name
+newlst2 = []
+for i,e in enumerate(x):
+    if i%2 ==0:
+        newlst2.append(e.upper())
+#combined index valued name that are paired
+newlst3 = list(zip(newlst2,newlst1))
+#print(newlst3)   
 
-name = []
 
-for i in keys:
-    newlist.append(i.lower())
-for e in x:
-    if e.lower() in newlist:
-        name.append(e)
-print(newlist)
-print(name)
+name2 = []
+for i in newlst3:
+    name2.append(''.join(i))
+
+#print(name2)
     
+name3 = []
+for i in name2:
+    if i in keys:
+        name3.append(i)
+    elif i not in keys:
+        for e in i:
+            if e.upper() in keys:
+                name3.append(e.upper())
+        
 
 
-
-
-
-
-
-
+print(name3) 
 
 
 
