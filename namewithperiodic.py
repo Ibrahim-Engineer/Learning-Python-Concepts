@@ -128,26 +128,28 @@ x = str(input("name please: "))
 name1 = []
 for i in x:
     name1.append(i)
+if len(x)%2 != 0:
+    name1.append('.')    
 #odd index value name
 newlst1 = []
-for i,e in enumerate(x):
+for i,e in enumerate(name1):
     if i%2 !=0:
         newlst1.append(e)
 #even index value name
 newlst2 = []
-for i,e in enumerate(x):
+for i,e in enumerate(name1):
     if i%2 ==0:
         newlst2.append(e.upper())
 #combined index valued name that are paired
 newlst3 = list(zip(newlst2,newlst1))
-#print(newlst3)   
+print(newlst3)   
 
 
 name2 = []
 for i in newlst3:
     name2.append(''.join(i))
 
-#print(name2)
+print(name2)
     
 name3 = []
 for i in name2:
@@ -157,6 +159,7 @@ for i in name2:
         for e in i:
             if e.upper() in keys:
                 name3.append(e.upper())
+
         
 
 
