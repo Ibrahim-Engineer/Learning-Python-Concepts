@@ -124,7 +124,7 @@ import os
 
 
 keys = list(periodic_table.keys())
-    
+values = list(periodic_table.values())    
 #print(keys)
 #print('')
 def something():    
@@ -169,9 +169,21 @@ def something():
                     if e.upper() =='.':
                         name3.remove(e.upper())
     
-
-    Label(screen, text = name3, fg = "green", font = ("Calibri", 11)).pack()
-    print(name3) 
+    print(name3)
+    
+    name4 = []
+    for i in (name3):
+        for k,v in enumerate(keys):
+            if i == v:
+                name4.append(values[k])
+    print(name4)
+    
+    
+        
+    Label(screen, text = x, width = "300", height = "2", fg = "black", font = ("Calibri", 20)).pack()
+    Label(screen, text = name3, width = "300", height = "2", fg = "green", font = ("Calibri", 20)).pack()
+    Label(screen, text = name4, width = "300", height = "2", fg = "blue", font = ("Calibri", 20)).pack()
+  
 def main_screen():
     global screen
     screen = Tk()
@@ -190,7 +202,7 @@ def main_screen():
     entry = Entry(screen, textvariable = username)
     entry.pack()
     Label(screen, text = "").pack()
-    Button(screen, text = "Try", width = "10", height = "1", command = something).pack()
+    Button(screen, text = "Try", width = "20", height = "2", command = something).pack()
     Label(text = "").pack()
 
     screen.mainloop()
